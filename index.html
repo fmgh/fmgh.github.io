@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<!-- Hora de Inicial 8:42pm -->
 <head>
     <title>CV Fabian Garcia</title>
 
     <!-- Metas de la pagina  -->
-    <meta charset="utf=8"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <meta name="description" content="Curriculum Vitae - Fabian Martin Garcia Hernandez"/>
     <meta name="keywords" content="historial, resumen, vida laboral" />
     <meta name="author" content="Fabian Garcia" />
@@ -24,181 +23,297 @@
 
     <style>
         .hero.has-background {
-        position: relative;
-        overflow: hidden;
+          position: relative;
+          overflow: hidden;
         }
         .hero-background {
-        position: absolute;
-        object-fit: cover;
-        object-position: center center;
-        width: 100%;
-        height: 100%;
+          position: absolute;
+          object-fit: cover;
+          object-position: center center;
+          width: 100%;
+          height: 100%;
         }
         .hero-background.is-transparent {
-        opacity: 0.3;
+          opacity: 0.3;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+
+    <!-- Banner -->
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+
+        <!-- Marca / Logotipo + Hamburguer symbol -->
         <div class="navbar-brand">
-          <a class="navbar-item is-dark" href=".">
-            <img src="imagenes/brand.png">
-          </a>
-      
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
-      
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-start">
-            <a class="navbar-item">
-              Inicio
+            <a class="navbar-item" href=".">
+                <img src="imagenes/brand.png" width="112" height="28">
             </a>
-      
-            <a class="navbar-item">
-              Presentacion
+        
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
             </a>
-      
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">
-                Mas
-              </a>
-      
-              <div class="navbar-dropdown">
-                <a class="navbar-item">
-                  Acerca
-                </a>
-                <a class="navbar-item">
-                  Trabajos
-                </a>
-                <a class="navbar-item">
-                  Contacto
-                </a>
-                <hr class="navbar-divider">
-                <a class="navbar-item">
-                  Links
-                </a>
-              </div>
-            </div>
-          </div>
-      
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="field is-grouped">
-                <p class="control">
-                  <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="https://bulma.io" target="_blank" href="https://twitter.com/intent/tweet?text=Echa un vistazo a este perfil profesional ;)&amp;hashtags=OpenToWork,Reynosa&amp;url=https://about.me/fabiangarcia&amp;">
-                    <span class="icon">
-                      <i class="fab fa-twitter"></i>
-                    </span>
-                    <span>
-                      Tweet
-                    </span>
-                  </a>
-                </p>
-                <p class="control">
-                  <a class="button is-primary" href="recursos/CV - Perfil LinkedIn.pdf">
-                    <span class="icon">
-                      <i class="fas fa-download"></i>
-                    </span>
-                    <span>Descargar CV (PDF)</span>
-                  </a>
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
-      </nav>
 
-      <!-- Seccion 
-      <section class="section ">
-        <h1 class="title">Inicio</h1>
-        <h2 class="subtitle">
-          Bienvenido a mi <strong>Curriculum Vitae</strong> version web.
-          Echa un vistazo a lo que he realizado a lo largo de los ultima decada, quiza pueda ayudarte en tu
-          busqueda de candidatos a una vacante de TI.
-        </h2>
-      </section>-->
+        <!-- Menu -->
+        <!--<div class="container">-->
+            <div id="navMenu" class="navbar-menu">
 
-      <section class="hero is-info is-fullheight-with-navbar has-background">
-        <img alt="FabianGarcia" class="hero-background is-transparent" src="imagenes/background.jpg" />
+                <!-- Nav START -->
+                <div class="navbar-start">
+                    <a class="navbar-item" href="#inicio">
+                        Inicio
+                    </a>
+                    <a class="navbar-item" href="#presentacion">
+                        Presentacion
+                    </a>
+                    <a class="navbar-item" href="#habilidades">
+                        Habilidades
+                    </a>
+                </div>
+
+                <!-- Nav END -->
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <a class="button is-success" target="_blank" href="recursos/CV - Perfil LinkedIn.pdf">
+                            <span class="icon"><i class="fas fa-download"></i></span>
+                            <span>Descargar CV (.PDF)</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        <!--</div>-->
+    </nav>
+      
+    <!-- HERO (Cuerpo Principal) -->
+    <!-- INICIO -->
+    <section class="hero is-light is-fullheight-with-navbar has-background" id="inicio">
+        <img alt="BackgroundTech" class="hero-background is-transparent" src="imagenes/background_tech.jpg" />
         <div class="hero-body">
-          <div class="container">
-            <p class="title">
-                Inicio
-            </p>
-            <p class="subtitle">
-                Bienvenido a mi <strong>Curriculum Vitae</strong> version web.
-                Echa un vistazo a lo que he realizado a lo largo de los ultima decada, quiza pueda ayudarte en tu
-                busqueda de candidatos a una vacante de TI.
-            </p>
-          </div>
+            <div class="container">
+                <p class="title">Inicio</p>
+                <p></p>
+                <p class="subtitle">Bienvenido a mi <strong>Curriculum Vitae</strong> version web.</p>
+                <p class="subtitle">Echa un vistazo a lo que he realizado a lo largo de los ultima decada, quiza pueda ayudarte en tu
+                    busqueda de candidatos a una vacante de TI.</p>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <!--<section class="hero is-info is-fullheight">
+    <!-- PRESENTACION  -->
+    <section class="hero is-transparent is-fullheight has-background" id="presentacion">
+        <img alt="FabianGarcia" class="hero-background" style="opacity: 0.65;" src="imagenes/background.jpg" />
         <div class="hero-body">
-          <p class="title">
-            Inicio
-          </p>
-          <p class="subtitle">
-            Bienvenido a mi <strong>Curriculum Vitae</strong> version web.
-            Echa un vistazo a lo que he realizado a lo largo de los ultima decada, quiza pueda ayudarte en tu
-            busqueda de candidatos a una vacante de TI.
-          </p>
-        </div>
-      </section>-->
-
-      <!-- CARD 
-      <div class="card">
-        <div class="card-content">
-          <div class="media">
-            <div class="media-left">
-              <figure class="image is-48x48">
-                <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-              </figure>
+            <div class="container">
+                <div class="tile is-ancestor">
+                    <div class="tile is-parent">
+                      <!-- Add content or other tiles -->
+                      <div class="tile is-child box has-background-info">
+                        <p class="title is-size-4 is-size-5-mobile has-text-white">Presentacion</p>
+                        <p class="subtitle is-size-6-mobile has-text-white">Mi nombre es Fabian Garcia y soy egresado de la Universidad Autonoma de Tamaulipas (Generación 2010).</p>
+                        <p class="subtitle is-size-6-mobile has-text-white">Me especializo en desarrollo de aplicaciones (en general .NET, tanto para escritorio así como sitio web de intranet).</p>
+                      </div>
+                    </div>                    
+                    <div class="tile is-parent">
+                        <!-- <article class="tile is-child box">
+                            <p class="title">Two</p>
+                            <p class="subtitle">Subtitle</p>
+                        </article> -->
+                    </div>
+                    <div class="tile is-parent">
+                        <!-- <article class="tile is-child box">
+                            <p class="title">Three</p>
+                            <p class="subtitle">Subtitle</p>
+                        </article> -->
+                    </div>
+                    <div class="tile is-parent">
+                        <!-- <article class="tile is-child box">
+                            <p class="title">Four</p>
+                            <p class="subtitle">Subtitle</p>
+                        </article> -->
+                    </div>
+                </div>
             </div>
-            <div class="media-content">
-              <p class="title is-4">John Smith</p>
-              <p class="subtitle is-6">@johnsmith</p>
-            </div>
-          </div>
-      
-          <div class="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-            <a href="#">#css</a> <a href="#">#responsive</a>
-            <br>
-            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-          </div>
         </div>
-      </div>-->
+    </section>
 
-      <!-- Pie de Pagina -->
-      <footer class="footer">
+    <!-- HABILIDADES -->
+    <section class="hero is-fullheight has-background-info" id="habilidades">
+        <img alt="BackgroundTech" class="hero-background is-transparent" src="imagenes/background_tech2.jpg" />
+        <div class="hero-body">
+            <div class="container">
+                <p class="title has-text-white has-text-centered">Habilidades</p>
+                <div class="tile is-ancestor">
+                    <div class="tile is-parent">
+                        <!-- Add content or other tiles -->
+                        <div class="tile is-child box has-background-white-ter">
+                            <article class="message">
+                                <div class="message-header">
+                                  <p>Generales/Redes</p>
+                                </div>
+                                <div class="message-body">
+                                    <ul class="fa-ul">
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Mantenimiento preventivo y correctivo de equipos de cómputo</span></li>
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Soporte de conectividad de datos y dispositivos (impresoras, switches)</span></li>
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Cableado estructurado de voz y datos</span></li>
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Seguimiento de fallas de voz en regletas 110</span></li>
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Creación y administración de reportes (SQL Reporting Services + Report Builder 2.0)</span></li>
+                                      </ul>
+                                </div>
+                            </article>
+                        </div>
+                    </div>                    
+                    <div class="tile is-parent">
+                        <div class="tile is-child box has-background-white-ter">
+                            <article class="message is-info">
+                                <div class="message-header">
+                                  <p>Lenguajes de Programacion</p>
+                                </div>
+                                <div class="message-body">
+                                    <ul class="fa-ul">      
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>C#</span></li>       
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Visual Basic .NET</span></li>                           
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Visual Basic 6.0</span></li>                                        
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Java</span></li>
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Javascript</span></li>
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Python</span></li>
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>C++</span></li>
+                                    </ul>
+                                </div>
+                            </article>
+                        </div>
+                        <!-- <article class="tile is-child box">
+                            <p class="title">Two</p>
+                            <p class="subtitle">Subtitle</p>
+                        </article> -->
+                    </div>
+                    <div class="tile is-parent">
+                        <div class="tile is-child box has-background-white-ter">
+                            <article class="message is-warning">
+                                <div class="message-header">
+                                  <p>Bases de datos</p>
+                                </div>
+                                <div class="message-body">
+                                    <ul class="fa-ul">   
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>MS SQL Server 2012</span></li>   
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>MS SQL Server 2008</span></li>
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Toad for Oracle 12</span></li>                                        
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>MySQL</span></li>
+                                    </ul>
+                                </div>
+                            </article>
+                        </div>
+                        <!-- <article class="tile is-child box">
+                            <p class="title">Three</p>
+                            <p class="subtitle">Subtitle</p>
+                        </article> -->
+                    </div>
+                    <div class="tile is-parent">
+                        <div class="tile is-child box has-background-white-ter">
+                            <article class="message is-danger">
+                                <div class="message-header">
+                                  <p>Frameworks/Desarrollo</p>
+                                </div>
+                                <div class="message-body">
+                                    <ul class="fa-ul">      
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>.NET Framework</span></li>       
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>LINQ</span></li>                           
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>WebServices 2.0</span></li>                                        
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>ASP .NET</span></li>
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>MVC .NET</span></li>
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>jQuery</span></li>
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Bootstrap</span></li>
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Bulma CSS</span></li>
+                                    </ul>
+                                </div>
+                            </article>
+                        </div>
+                        <!-- <article class="tile is-child box">
+                            <p class="title">Four</p>
+                            <p class="subtitle">Subtitle</p>
+                        </article> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Pie de Pagina -->
+    <footer class="footer">
         <div class="content has-text-centered">
-          <p>
+            <p>
             <strong>Curriculum Vitae</strong> por <a href="https://about.me/fabiangarcia">Fabian Garcia</a>. The source code is licensed
             <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
             is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-          </p>
+            </p>
         </div>
-      </footer>
+        <div class="container">
+            <div class="buttons has-addons is-centered">
+                <a class="button is-info is-rounded" target="_blank" href="https://twitter.com/intent/tweet?text=Echa un vistazo a este perfil profesional ;)&amp;hashtags=OpenToWork,Reynosa&amp;url=https://about.me/fabiangarcia&amp;">
+                    <span class="icon"><i class="fab fa-twitter"></i></span>
+                    <span>Re-Tweet</span>
+                </a>
+                <a class="button is-dark is-rounded" target="_blank" href="https://github.com/fmgh">
+                    <span class="icon"><i class="fab fa-github-alt"></i></span> 
+                    <span>Visitar Github</span>
+                </a>
+            </div>
+        </div>
+    </footer>
 
-<script>
-    $(document).ready(function() {
+    <script>
+        // Menu para moviles version JQuery Framework
+        $(document).ready(function() {
 
-        // Check for click events on the navbar burger icon
-        $(".navbar-burger").click(function() {
+            // Check for click events on the navbar burger icon
+            $(".navbar-burger").click(function() {
 
-            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                $(".navbar-burger").toggleClass("is-active");
+                $(".navbar-menu").toggleClass("is-active");
+
+            });            
+        });
+
+        // Deslizarse entre secciones.
+        $(document).on('click', 'a[href^="#"]', function (event) {
+            event.preventDefault();
+
+            $('html, body').animate({
+                scrollTop: $($.attr(this, 'href')).offset().top
+            }, 500);
+
             $(".navbar-burger").toggleClass("is-active");
             $(".navbar-menu").toggleClass("is-active");
-
         });
-    });
-</script>
+
+        // Menu para moviles version Vanilla Javascript
+        /*document.addEventListener('DOMContentLoaded', () => {
+
+            // Get all "navbar-burger" elements
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+            // Check if there are any navbar burgers
+            if ($navbarBurgers.length > 0) {
+
+            // Add a click event on each of them
+            $navbarBurgers.forEach( el => {
+                el.addEventListener('click', () => {
+
+                // Get the target from the "data-target" attribute
+                const target = el.dataset.target;
+                const $target = document.getElementById(target);
+
+                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
+
+                });
+            });
+            }
+
+        });*/
+    </script>
 </body>
