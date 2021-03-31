@@ -345,7 +345,7 @@
             <div class="container">
                 <div class="columns is-centered">
                     <div class="column is-three-fifths">
-                        <form class="box" action="https://formspree.io/f/mvodpeyo" method="POST">
+                        <form class="box" id="contact-form">
                             <h1 class="title">Contactame</h1>
                             <br>
                             <p class="subtitle">Si tienes alguna duda o comentario, te invito a enviarme un mensaje a traves de este formulario.</p>
@@ -354,7 +354,7 @@
                             <div class="field">
                                 <label class="label">Asunto</label>
                                 <div class="control">
-                                    <input class="input is-info" type="input" name="_subject" placeholder="e.g. Me gusta mucho tu pagina!" required="" />
+                                    <input id="iAsunto" class="input is-info" type="input" name="_subject" placeholder="e.g. Me gusta mucho tu pagina!" required="" />
                                     <!-- <input class="input" type="email" placeholder="e.g. alex@example.com"> -->
                                 </div>
                             </div>
@@ -362,7 +362,7 @@
                             <div class="field">
                                 <label class="label">Email</label>
                                 <div class="control">
-                                    <input class="input is-info" type="email" name="_replyto" placeholder="e.g. alex@example.com" required="" />
+                                    <input id="iEmail" class="input is-info" type="email" name="_replyto" placeholder="e.g. alex@example.com" required="" />
                                     <!-- <input class="input" type="email" placeholder="e.g. alex@example.com"> -->
                                 </div>
                             </div>
@@ -370,11 +370,11 @@
                             <div class="field">
                                 <label class="label">Mensaje</label>
                                 <div class="control">
-                                    <textarea class="textarea is-info" name="message" rows="5" placeholder="Me gustaria cotizar una pagina similar..." required="" ></textarea>
+                                    <textarea id="iMensaje" class="textarea is-info" name="message" rows="5" placeholder="Me gustaria cotizar una pagina similar..." required="" ></textarea>
                                 </div>
                             </div>
 
-                            <button class="button is-primary">Enviar!</button>                                  
+                            <button class="button is-primary" id="btnEnviarEmail" >Enviar!</button>                                  
                             
                         </form>
                     </div>
@@ -424,7 +424,39 @@
             $(".navbar-item.has-dropdown").click(function () {
                 $(this).children(".navbar-dropdown").toggleClass("is-active");
             });
+
+            var message = "";
+
+            $("#btnEnviarEmail").on("click", function() {
+                message = $("#contact-form").serialize();
+                $.ajax({
+                    url: "https://formspree.io/f/mvodpeyo", 
+                    method: "POST",
+                    data: {
+                            message: "Asunto  : "+ $("#iAsunto").val() +" \n" + 
+                                     "Email   : "+ $("#iEmail").val() +" \n" +
+                                     "Mensaje : "+ $("#iMensaje").val()
+                          },
+                    dataType: "json"
+                });
+                alert('Gracias por tu mensaje, me pondre en contacto a la brevedad.');
+                $("#contact-form").trigger("reset");
+                return false;
+            });
+
         });
+
+        function fetchInput(identifier) {
+            var form_data = identifier.serialize().split('&');
+            var input     = {};
+
+            $.each(form_data, function(key, value) {
+                var data = value.split('=');
+                input[data[0]] = decodeURIComponent(data[1]);
+            });
+
+            return input;
+        }
 
         // Deslizarse entre secciones.
         $(document).on('click', 'a[href^="#"]', function (event) {
