@@ -1,43 +1,68 @@
 <!DOCTYPE html>
+
 <head>
+    <link rel="icon" type="image/png" href="imagenes/cv_icon.png">
     <title>CV Fabian Garcia</title>
 
     <!-- Metas de la pagina  -->
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <meta name="description" content="Curriculum Vitae - Fabian Martin Garcia Hernandez"/>
+    <meta name="description" content="Curriculum Vitae - Fabian Martin Garcia Hernandez" />
     <meta name="keywords" content="historial, resumen, vida laboral" />
     <meta name="author" content="Fabian Garcia" />
     <meta name="copyright" content="Fabian Garcia" />
 
     <!-- Layout multi-dispositivo -->
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Bulma Framework -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
 
     <!-- Font Awesome icons -->
     <script src="https://kit.fontawesome.com/bf915a87f0.js" crossorigin="anonymous"></script>
 
     <!-- jQuery Framework -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <style>
+        #header-logo {
+            background: url(imagenes/brand.png) no-repeat center center;
+            background-size: contain;
+            width: 225px
+        }
+
         .hero.has-background {
-          position: relative;
-          overflow: hidden;
+            position: relative;
+            overflow: hidden;
         }
+
         .hero-background {
-          position: absolute;
-          object-fit: cover;
-          object-position: center center;
-          width: 100%;
-          height: 100%;
+            position: absolute;
+            object-fit: cover;
+            object-position: center center;
+            width: 100%;
+            height: 100%;
         }
+
         .hero-background.is-transparent {
-          opacity: 0.3;
+            opacity: 0.3;
+        }
+
+        /* https://github.com/jgthms/bulma/issues/2361#issuecomment-801510254 */
+        @media screen and (max-width: 1024px) {
+        .navbar-dropdown .is-active {
+            display: block;
+        }
+
+        .navbar-dropdown:not(.is-active) {
+            display: none;
+        }
         }
     </style>
 </head>
+
 <body>
 
     <!-- Banner -->
@@ -45,10 +70,8 @@
 
         <!-- Marca / Logotipo + Hamburguer symbol -->
         <div class="navbar-brand">
-            <a class="navbar-item" href=".">
-                <img src="imagenes/brand.png" width="112" height="28">
-            </a>
-        
+            <a id="header-logo" class="navbar-item" href="."></a>
+
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
@@ -58,34 +81,81 @@
 
         <!-- Menu -->
         <!--<div class="container">-->
-            <div id="navMenu" class="navbar-menu">
+        <div id="navMenu" class="navbar-menu">
 
-                <!-- Nav START -->
-                <div class="navbar-start">
-                    <a class="navbar-item" href="#inicio">
-                        Inicio
+            <!-- Nav START -->
+            <div class="navbar-start">
+                <a class="navbar-item" href="#inicio">
+                    Inicio
+                </a>
+                <a class="navbar-item" href="#presentacion">
+                    Presentacion
+                </a>
+                <a class="navbar-item" href="#habilidades">
+                    Habilidades
+                </a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        Empresas
                     </a>
-                    <a class="navbar-item" href="#presentacion">
-                        Presentacion
-                    </a>
-                    <a class="navbar-item" href="#habilidades">
-                        Habilidades
-                    </a>
-                </div>
-
-                <!-- Nav END -->
-                <div class="navbar-end">
-                    <div class="navbar-item">
-                        <a class="button is-success" target="_blank" href="recursos/CV - Perfil LinkedIn.pdf">
-                            <span class="icon"><i class="fas fa-download"></i></span>
-                            <span>Descargar CV (.PDF)</span>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" target="_blank" href="https://www.facebook.com/AvenaSoft/">
+                            <span class="container"
+                                style="background: url(imagenes/avenasoft_logo.png) no-repeat; display: inline-block; background-size: 40px 40px; height: 40px; padding-left: 50px; ">
+                                <span style="height: 40px; display: table-cell; vertical-align: middle;"><b>AvenaSoft -
+                                    Diseños & Software</b><p>[Emprendimiento 2021 -  actualidad]</p></span>
+                            </span>
+                        </a>
+                        <hr class="navbar-divider">
+                        <a class="navbar-item" target="_blank" href="https://www.iqor.com/">
+                            <span class="container"
+                                style="background: url(imagenes/iqor.png) no-repeat; display: inline-block; background-size: 40px 40px; height: 40px; padding-left: 50px; ">
+                                <span style="height: 40px; display: table-cell; vertical-align: middle;"><b>iQor Global
+                                    Services de México</b><p>[Programador Analista 2016-2020]</p></span>
+                            </span>
+                        </a>
+                        <a class="navbar-item" target="_blank" href="https://www.denso-ten.com/">
+                            <span class="container"
+                                style="background: url(imagenes/denso_ten.png) no-repeat; display: inline-block; background-size: 40px 40px; height: 40px; padding-left: 50px; ">
+                                <span style="height: 40px; display: table-cell; vertical-align: middle;"><b>Denso Ten de
+                                    México</b><p>[Ingeniero de Sistemas 2015-2016]</p></span>
+                            </span>
+                        </a>
+                        <a class="navbar-item" target="_blank" href="https://www.pemex.com/">
+                            <span class="container"
+                                style="background: url(imagenes/pemex.png) no-repeat; display: inline-block; background-size: 40px 40px; height: 40px; padding-left: 50px; ">
+                                <span style="height: 40px; display: table-cell; vertical-align: middle;"><b>PEMEX
+                                    Outsourcing</b><p>[Programador 2011 - 2015]</p></span>
+                            </span>
+                        </a>
+                        <hr class="navbar-divider">
+                        <a class="navbar-item" target="_blank" href="https://www.facebook.com/ALCOMElectronicosDeMexico/">
+                            <span class="container"
+                                style="background: url(imagenes/alcom.png) no-repeat; display: inline-block; background-size: 40px 40px; height: 40px; padding-left: 50px; ">
+                                <span style="height: 40px; display: table-cell; vertical-align: middle;"><b>Alcom
+                                    Electrónicos de México</b><p>[Practicas Profesionales 2010]</p></span>
+                            </span>
                         </a>
                     </div>
                 </div>
+                <a class="navbar-item" href="#contacto">
+                    Contacto
+                </a>
             </div>
+
+            <!-- Nav END -->
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <a class="button is-success" target="_blank" href="recursos/CV - Perfil LinkedIn.pdf">
+                        <span class="icon"><i class="fas fa-download"></i></span>
+                        <span>Descargar CV (.PDF)</span>
+                    </a>
+                </div>
+            </div>
+        </div>
         <!--</div>-->
     </nav>
-      
+
     <!-- HERO (Cuerpo Principal) -->
     <!-- INICIO -->
     <section class="hero is-light is-fullheight-with-navbar has-background" id="inicio">
@@ -95,8 +165,7 @@
                 <p class="title">Inicio</p>
                 <p></p>
                 <p class="subtitle">Bienvenido a mi <strong>Curriculum Vitae</strong> version web.</p>
-                <p class="subtitle">Echa un vistazo a lo que he realizado a lo largo de los ultima decada, quiza pueda ayudarte en tu
-                    busqueda de candidatos a una vacante de TI.</p>
+                <p class="subtitle">Te invito a ver un poco de lo que he realizado a lo largo de los ultima decada.</p>
             </div>
         </div>
     </section>
@@ -108,13 +177,16 @@
             <div class="container">
                 <div class="tile is-ancestor">
                     <div class="tile is-parent">
-                      <!-- Add content or other tiles -->
-                      <div class="tile is-child box has-background-info">
-                        <p class="title is-size-4 is-size-5-mobile has-text-white">Presentacion</p>
-                        <p class="subtitle is-size-6-mobile has-text-white">Mi nombre es Fabian Garcia y soy egresado de la Universidad Autonoma de Tamaulipas (Generación 2010).</p>
-                        <p class="subtitle is-size-6-mobile has-text-white">Me especializo en desarrollo de aplicaciones (en general .NET, tanto para escritorio así como sitio web de intranet).</p>
-                      </div>
-                    </div>                    
+                        <!-- Add content or other tiles -->
+                        <div class="tile is-child box has-background-info">
+                            <p class="title is-size-4 is-size-5-mobile has-text-white">Presentacion</p>
+                            <p class="subtitle is-size-6-mobile has-text-white">Mi nombre es Fabian Garcia y soy
+                                egresado de la Universidad Autonoma de Tamaulipas (Generación 2010).</p>
+                            <p class="subtitle is-size-6-mobile has-text-white">Me especializo en desarrollo de
+                                aplicaciones (en general .NET, tanto para escritorio así como sitio web de intranet).
+                            </p>
+                        </div>
+                    </div>
                     <div class="tile is-parent">
                         <!-- <article class="tile is-child box">
                             <p class="title">Two</p>
@@ -150,35 +222,51 @@
                         <div class="tile is-child box has-background-white-ter">
                             <article class="message">
                                 <div class="message-header">
-                                  <p>Generales/Redes</p>
+                                    <p>Generales/Redes</p>
                                 </div>
                                 <div class="message-body">
                                     <ul class="fa-ul">
-                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Mantenimiento preventivo y correctivo de equipos de cómputo</span></li>
-                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Soporte de conectividad de datos y dispositivos (impresoras, switches)</span></li>
-                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Cableado estructurado de voz y datos</span></li>
-                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Seguimiento de fallas de voz en regletas 110</span></li>
-                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Creación y administración de reportes (SQL Reporting Services + Report Builder 2.0)</span></li>
-                                      </ul>
+                                        <li><span class="fa-li"><i
+                                                    class="fas fa-check-square"></i></span><span>Mantenimiento
+                                                preventivo y correctivo de equipos de cómputo</span></li>
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Soporte
+                                                de conectividad de datos y dispositivos (impresoras, switches)</span>
+                                        </li>
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Cableado
+                                                estructurado de voz y datos</span></li>
+                                        <li><span class="fa-li"><i
+                                                    class="fas fa-check-square"></i></span><span>Seguimiento de fallas
+                                                de voz en regletas 110</span></li>
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Creación
+                                                y administración de reportes (SQL Reporting Services + Report Builder
+                                                2.0)</span></li>
+                                    </ul>
                                 </div>
                             </article>
                         </div>
-                    </div>                    
+                    </div>
                     <div class="tile is-parent">
                         <div class="tile is-child box has-background-white-ter">
                             <article class="message is-info">
                                 <div class="message-header">
-                                  <p>Lenguajes de Programacion</p>
+                                    <p>Lenguajes de Programacion</p>
                                 </div>
                                 <div class="message-body">
-                                    <ul class="fa-ul">      
-                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>C#</span></li>       
-                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Visual Basic .NET</span></li>                           
-                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Visual Basic 6.0</span></li>                                        
-                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Java</span></li>
-                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Javascript</span></li>
-                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Python</span></li>
-                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>C++</span></li>
+                                    <ul class="fa-ul">
+                                        <li><span class="fa-li"><i
+                                                    class="fas fa-check-square"></i></span><span>C#</span></li>
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Visual
+                                                Basic .NET</span></li>
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Visual
+                                                Basic 6.0</span></li>
+                                        <li><span class="fa-li"><i
+                                                    class="fas fa-check-square"></i></span><span>Java</span></li>
+                                        <li><span class="fa-li"><i
+                                                    class="fas fa-check-square"></i></span><span>Javascript</span></li>
+                                        <li><span class="fa-li"><i
+                                                    class="fas fa-check-square"></i></span><span>Python</span></li>
+                                        <li><span class="fa-li"><i
+                                                    class="fas fa-check-square"></i></span><span>C++</span></li>
                                     </ul>
                                 </div>
                             </article>
@@ -192,14 +280,18 @@
                         <div class="tile is-child box has-background-white-ter">
                             <article class="message is-warning">
                                 <div class="message-header">
-                                  <p>Bases de datos</p>
+                                    <p>Bases de datos</p>
                                 </div>
                                 <div class="message-body">
-                                    <ul class="fa-ul">   
-                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>MS SQL Server 2012</span></li>   
-                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>MS SQL Server 2008</span></li>
-                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Toad for Oracle 12</span></li>                                        
-                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>MySQL</span></li>
+                                    <ul class="fa-ul">
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>MS SQL
+                                                Server 2012</span></li>
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>MS SQL
+                                                Server 2008</span></li>
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Toad for
+                                                Oracle 12</span></li>
+                                        <li><span class="fa-li"><i
+                                                    class="fas fa-check-square"></i></span><span>MySQL</span></li>
                                     </ul>
                                 </div>
                             </article>
@@ -213,18 +305,27 @@
                         <div class="tile is-child box has-background-white-ter">
                             <article class="message is-danger">
                                 <div class="message-header">
-                                  <p>Frameworks/Desarrollo</p>
+                                    <p>Frameworks/Desarrollo</p>
                                 </div>
                                 <div class="message-body">
-                                    <ul class="fa-ul">      
-                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>.NET Framework</span></li>       
-                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>LINQ</span></li>                           
-                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>WebServices 2.0</span></li>                                        
-                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>ASP .NET</span></li>
-                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>MVC .NET</span></li>
-                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>jQuery</span></li>
-                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Bootstrap</span></li>
-                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Bulma CSS</span></li>
+                                    <ul class="fa-ul">
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>.NET
+                                                Framework</span></li>
+                                        <li><span class="fa-li"><i
+                                                    class="fas fa-check-square"></i></span><span>LINQ</span></li>
+                                        <li><span class="fa-li"><i
+                                                    class="fas fa-check-square"></i></span><span>WebServices 2.0</span>
+                                        </li>
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>ASP
+                                                .NET</span></li>
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>MVC
+                                                .NET</span></li>
+                                        <li><span class="fa-li"><i
+                                                    class="fas fa-check-square"></i></span><span>jQuery</span></li>
+                                        <li><span class="fa-li"><i
+                                                    class="fas fa-check-square"></i></span><span>Bootstrap</span></li>
+                                        <li><span class="fa-li"><i class="fas fa-check-square"></i></span><span>Bulma
+                                                CSS</span></li>
                                     </ul>
                                 </div>
                             </article>
@@ -238,25 +339,73 @@
             </div>
         </div>
     </section>
-    
+
+    <!-- Contacto -->
+    <section class="hero is-light is-fullheight has-background" id="contacto">
+        <img alt="BackgroundTech" class="hero-background" src="imagenes/contact-background.jpg" />
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-three-fifths">
+                        <form class="box" action="https://formspree.io/f/mvodpeyo" method="POST">
+                            <h1 class="title">Contactame</h1>
+                            <br>
+                            <p class="subtitle">Si tienes alguna duda o comentario, te invito a enviarme un mensaje a traves de este formulario.</p>
+                            <br>
+
+                            <div class="field">
+                                <label class="label">Asunto</label>
+                                <div class="control">
+                                    <input class="input is-info" type="input" name="_subject" placeholder="e.g. Me gusta mucho tu pagina!" required="" />
+                                    <!-- <input class="input" type="email" placeholder="e.g. alex@example.com"> -->
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label">Email</label>
+                                <div class="control">
+                                    <input class="input is-info" type="email" name="_replyto" placeholder="e.g. alex@example.com" required="" />
+                                    <!-- <input class="input" type="email" placeholder="e.g. alex@example.com"> -->
+                                </div>
+                            </div>
+                            
+                            <div class="field">
+                                <label class="label">Mensaje</label>
+                                <div class="control">
+                                    <textarea class="textarea is-info" name="message" rows="5" placeholder="Me gustaria cotizar una pagina similar..." required="" ></textarea>
+                                </div>
+                            </div>
+
+                            <div class="g-recaptcha" data-sitekey="6LfZAJcaAAAAAMvMC55aMT1yxTCGs3H-Wv_i1v8r"></div>
+                            
+                           <button class="button is-primary">Enviar!</button>                                  
+                            
+                        </form>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </section>
 
     <!-- Pie de Pagina -->
     <footer class="footer">
         <div class="content has-text-centered">
             <p>
-            <strong>Curriculum Vitae</strong> por <a href="https://about.me/fabiangarcia">Fabian Garcia</a>. The source code is licensed
-            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-            is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+                <strong>Curriculum Vitae</strong> por <a href="https://about.me/fabiangarcia">Fabian Garcia</a>. The
+                source code is licensed
+                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+                is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
             </p>
         </div>
         <div class="container">
             <div class="buttons has-addons is-centered">
-                <a class="button is-info is-rounded" target="_blank" href="https://twitter.com/intent/tweet?text=Echa un vistazo a este perfil profesional ;)&amp;hashtags=OpenToWork,Reynosa&amp;url=https://about.me/fabiangarcia&amp;">
+                <a class="button is-info is-rounded" target="_blank"
+                    href="https://twitter.com/intent/tweet?text=Echa un vistazo a este perfil profesional ;)&amp;hashtags=OpenToWork,Reynosa&amp;url=https://about.me/fabiangarcia&amp;">
                     <span class="icon"><i class="fab fa-twitter"></i></span>
                     <span>Re-Tweet</span>
                 </a>
                 <a class="button is-dark is-rounded" target="_blank" href="https://github.com/fmgh">
-                    <span class="icon"><i class="fab fa-github-alt"></i></span> 
+                    <span class="icon"><i class="fab fa-github-alt"></i></span>
                     <span>Visitar Github</span>
                 </a>
             </div>
@@ -265,16 +414,20 @@
 
     <script>
         // Menu para moviles version JQuery Framework
-        $(document).ready(function() {
+        $(document).ready(function () {
 
             // Check for click events on the navbar burger icon
-            $(".navbar-burger").click(function() {
-
+            $(".navbar-burger").click(function () {
                 // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
                 $(".navbar-burger").toggleClass("is-active");
                 $(".navbar-menu").toggleClass("is-active");
+            });
 
-            });            
+            //https://github.com/jgthms/bulma/issues/2361#issuecomment-801510254
+            // just control the "is-action" class for the drop down menu, and use the above css to control this display
+            $(".navbar-item.has-dropdown").click(function () {
+                $(this).children(".navbar-dropdown").toggleClass("is-active");
+            });
         });
 
         // Deslizarse entre secciones.
