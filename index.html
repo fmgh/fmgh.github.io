@@ -23,6 +23,8 @@
     <!-- jQuery Framework -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
 
     <style>
         #header-logo {
@@ -346,7 +348,7 @@
             <div class="container">
                 <div class="columns is-centered">
                     <div class="column is-three-fifths">
-                        <form class="box" id="contact-form">
+                        <form class="box" id="contact-form" method="POST" onsubmit="return false;">
                             <h1 class="title">Contactame</h1>
                             <br>
                             <p class="subtitle">Si tienes alguna duda o comentario, te invito a enviarme un mensaje a traves de este formulario.</p>
@@ -355,7 +357,7 @@
                             <div class="field">
                                 <label class="label">Asunto</label>
                                 <div class="control">
-                                    <input id="iAsunto" class="input is-info" type="input" name="_subject" placeholder="e.g. Me gusta mucho tu pagina!" required="" />
+                                    <input id="iAsunto" class="input is-info" type="input" name="_subject" placeholder="e.g. Me gusta mucho tu pagina!" data-validation-error-msg="Olvido poner el asunto" required="" />
                                     <!-- <input class="input" type="email" placeholder="e.g. alex@example.com"> -->
                                 </div>
                             </div>
@@ -363,7 +365,7 @@
                             <div class="field">
                                 <label class="label">Email</label>
                                 <div class="control">
-                                    <input id="iEmail" class="input is-info" type="email" name="_replyto" placeholder="e.g. alex@example.com" required="" />
+                                    <input id="iEmail" class="input is-info" type="email" name="_replyto" placeholder="e.g. alex@example.com" data-validation="email" data-validation-error-msg="Coloca un email valido" required="" />
                                     <!-- <input class="input" type="email" placeholder="e.g. alex@example.com"> -->
                                 </div>
                             </div>
@@ -371,11 +373,11 @@
                             <div class="field">
                                 <label class="label">Mensaje</label>
                                 <div class="control">
-                                    <textarea id="iMensaje" class="textarea is-info" name="message" rows="5" placeholder="Me gustaria cotizar una pagina similar..." required="" ></textarea>
+                                    <textarea id="iMensaje" class="textarea is-info" name="message" rows="5" placeholder="Me gustaria cotizar una pagina similar..." data-validation-error-msg="Olvido poner el mensaje" required="" ></textarea>
                                 </div>
                             </div>
 
-                            <button class="button is-primary" id="btnEnviarEmail" >Enviar!</button>                                  
+                            <button class="button is-primary" id="btnEnviarEmail" type="submit" >Enviar!</button>                                  
                             
                         </form>
                     </div>
@@ -426,38 +428,50 @@
                 $(this).children(".navbar-dropdown").toggleClass("is-active");
             });
 
-            var message = "";
+            $("#contact-form").validate({
+            rules: {
+                _subject: "required",
+                _replyto: {
+                    required: true,
+                    email: true
+                        },
+                message: {
+                    required: true
+                }
+            },
+            messages: {
+                _subject: "Agrega el asunto de tu mensaje.",
+                _replyto: "Un email valido me ayudaria a ponerme en contacto contigo",
+                message:  "Creo que olvidaste colocar tu mensaje."
+            }
+        });
 
-            $("#btnEnviarEmail").on("click", function() {
-                message = $("#contact-form").serialize();
-                $.ajax({
-                    url: "https://formspree.io/f/mvodpeyo", 
-                    method: "POST",
-                    data: {
-                            message: "Asunto  : "+ $("#iAsunto").val() +" \n" + 
-                                     "Email   : "+ $("#iEmail").val() +" \n" +
-                                     "Mensaje : "+ $("#iMensaje").val()
-                          },
-                    dataType: "json"
-                });
-                alert('Gracias por tu mensaje, me pondre en contacto a la brevedad.');
-                $("#contact-form").trigger("reset");
-                return false;
+            $('#contact-form').submit(function(e){
+                // Stop the form actually posting
+                e.preventDefault();
+
+                // I want to be able to do the check here if the form has passed validation
+                if( $(this).valid() ) {
+                    //alert("siii");
+                    $.ajax({
+                        url: "https://formspree.io/f/mvodpeyo",
+                        method: "POST",
+                        data: {
+                                message: "Asunto  : "+ $("#iAsunto").val() +" \n" + 
+                                         "Email   : "+ $("#iEmail").val() +" \n" +
+                                         "Mensaje : "+ $("#iMensaje").val()
+                              },
+                        dataType: "json",
+                        success: function(result) {
+                            alert('Gracias por tu mensaje, me pondre en contacto a la brevedad.');
+                            $("#contact-form").trigger("reset");
+                        }
+                    });
+                }
+
             });
 
         });
-
-        function fetchInput(identifier) {
-            var form_data = identifier.serialize().split('&');
-            var input     = {};
-
-            $.each(form_data, function(key, value) {
-                var data = value.split('=');
-                input[data[0]] = decodeURIComponent(data[1]);
-            });
-
-            return input;
-        }
 
         // Deslizarse entre secciones.
         $(document).on('click', 'a[href^="#"]', function (event) {
